@@ -201,7 +201,7 @@ public extension Threading {
         }
         
         let holderObject = IsThisRequired(closure: closure)
-    #if os(OSX)
+    #if !os(Linux)
         typealias ThreadFunction = @convention(c) (UnsafeMutableRawPointer) -> UnsafeMutableRawPointer?
         let pthreadFunc: ThreadFunction = {
 			p in
